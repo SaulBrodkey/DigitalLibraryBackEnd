@@ -17,6 +17,7 @@ public class BackEndHash {
 	public BackEndHash()
 	{
 		hashmap = new LinkedList[10];
+mycapacity=10
 		mysize = 0;
 	}
 	@SuppressWarnings("unchecked")
@@ -118,7 +119,7 @@ public class BackEndHash {
 		//oversight on my end hashIt() only works with a Book,
 		//when given just an ISBN we have to manually code it
 		
-		int index = Math.abs(i.hashCode()/mycapacity);
+		int index = Math.abs(i.hashCode()%mycapacity);
 		if(hashmap[index]==null)
 		{
 			return null; //if nothing matches the index, automatic fail
@@ -146,7 +147,7 @@ public class BackEndHash {
 	//corresponding book, then removes it. Returns the book, else null.
 	public Book remove(String i)
 	{
-		int index = Math.abs(i.hashCode()/mycapacity);
+		int index = Math.abs(i.hashCode()%mycapacity);
 		if(hashmap[index]==null)
 		{
 			return null; //if nothing matches the index, automatic fail
@@ -173,7 +174,7 @@ public class BackEndHash {
 	//false otherwise.
 	public boolean contains(String i)
 	{
-		int index = Math.abs(i.hashCode()/mycapacity);
+		int index = Math.abs(i.hashCode()%mycapacity);
 		if(hashmap[index]==null)
 		{
 			return false; //if nothing matches the index, automatic fail
