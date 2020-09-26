@@ -46,7 +46,7 @@ public class BackEndHash {
 			{
 				//there is an entry here
 				int cnt = 0;
-				 for(int lcv1 =0; lcv1 < hashmap[hash].size(); lcv1++)
+				 for(int lcv1 =0; lcv1 < hashmap[lcv].size(); lcv1++)
 				{
 					//we want to set temp's new rehashed index
 					//equal to its corresponding current ISBNs
