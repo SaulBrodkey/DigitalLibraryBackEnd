@@ -46,12 +46,12 @@ mycapacity=10
 			{
 				//there is an entry here
 				int cnt = 0;
-				while(hashmap[lcv].get(cnt)!=null)
+				 for(int lcv1 =0; lcv1 < hashmap[hash].size(); lcv1++)
 				{
 					//we want to set temp's new rehashed index
 					//equal to its corresponding current ISBNs
-					temp[hashIt(hashmap[lcv].get(cnt))] = new LinkedList<Book>();
-					temp[hashIt(hashmap[lcv].get(cnt))].add(hashmap[lcv].get(cnt));
+					temp[hashIt(hashmap[lcv].get(lcv1))] = new LinkedList<Book>();
+					temp[hashIt(hashmap[lcv].get(lcv1))].add(hashmap[lcv].get(lcv1));
 					
 					
 				}
@@ -155,7 +155,7 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
+			for(int lcv =0; lcv < hashmap[index].size(); lcv++)
 			{
 				if(hashmap[index].get(lcv)!=null&&hashmap[index].get(lcv).getISBN().equals(i))
 					{
@@ -182,7 +182,7 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
+			for(int lcv =0; lcv < hashmap[index].size(); lcv++)
 			{
 				if(hashmap[index].get(lcv)!=null&&hashmap[index].get(lcv).getISBN().equals(i))
 					{
