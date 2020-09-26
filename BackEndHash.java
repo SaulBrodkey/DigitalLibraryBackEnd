@@ -87,9 +87,9 @@ mycapacity=10
 		 //we have to check if this book is duplicate
 		 //duplicates will not be inserted
 		 int cnt = 0;
-		 while(hashmap[hash].get(cnt)!=null)
+		 for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
 		 {
-			 if(hashmap[hash].get(cnt).getISBN() == n.getISBN())
+			 if(hashmap[hash].get(lcv)!=null&&hashmap[hash].get(lcv).getISBN() == n.getISBN())
 			 {
 				 break; //this is a duplicate, discard it
 			 }
@@ -127,11 +127,11 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			while(hashmap[index].get(cnt)!=null)
+			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
 			{
-				if(hashmap[index].get(cnt).getISBN().equals(i))
+				if(hashmap[index].get(lcv).getISBN().equals(i))
 					{
-						return hashmap[index].get(cnt);
+						return hashmap[index].get(lcv);
 					}
 				cnt++;
 			}
@@ -155,12 +155,12 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			while(hashmap[index].get(cnt)!=null)
+			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
 			{
-				if(hashmap[index].get(cnt).getISBN().equals(i))
+				if(hashmap[index].get(lcv)!=null&&hashmap[index].get(lcv).getISBN().equals(i))
 					{
-						Book save =  hashmap[index].get(cnt); //this is the book we want to remove, saving it for later
-						hashmap[index].remove(cnt); //this removes the book in question
+						Book save =  hashmap[index].get(lcv); //this is the book we want to remove, saving it for later
+						hashmap[index].remove(lcv); //this removes the book in question
 						return save; // we can now return and break the loop (no duplicates allowed)
 					}
 				cnt++;
@@ -182,9 +182,9 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			while(hashmap[index].get(cnt)!=null)
+			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
 			{
-				if(hashmap[index].get(cnt).getISBN().equals(i))
+				if(hashmap[index].get(lcv)!=null&&hashmap[index].get(lcv).getISBN().equals(i))
 					{
 						return true; //a matching ISBN exists. return true.
 					}
