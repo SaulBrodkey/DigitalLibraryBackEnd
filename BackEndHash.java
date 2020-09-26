@@ -17,7 +17,7 @@ public class BackEndHash {
 	public BackEndHash()
 	{
 		hashmap = new LinkedList[10];
-mycapacity=10
+		mycapacity=10;
 		mysize = 0;
 	}
 	@SuppressWarnings("unchecked")
@@ -127,7 +127,7 @@ mycapacity=10
 		else
 		{
 			int cnt = 0;
-			for(int lcv =0; lcv < hashmap[hash].size(); lcv++)
+			for(int lcv =0; lcv < hashmap[index].size(); lcv++)
 			{
 				if(hashmap[index].get(lcv).getISBN().equals(i))
 					{
